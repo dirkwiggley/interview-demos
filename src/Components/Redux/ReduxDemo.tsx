@@ -3,7 +3,7 @@ import Counter from "./Counter"
 const ReduxDemo = () => {
 
   return (
-    <div>
+    <div style={{borderTop: "2px solid black", textAlign: "center"}}>
       <h2>Redux Demo</h2>
       <Counter />
     </div>

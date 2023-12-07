@@ -7,11 +7,11 @@ const Counter = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   return (
-    <div>
+    <div style={{ marginBottom: 10}}>
       <h2>{count}</h2>
       <div>
-        <button onClick={() => dispatch(incrementAsync(10))}>Increment</button>
-        <button onClick={() => dispatch(decrement())}>Decrement</button>
+        <button onClick={() => dispatch(incrementAsync(10))} style={{marginRight: 5}}>Increment</button>
+        <button onClick={() => dispatch(decrement())} style={{marginLeft: 5}}>Decrement</button>
       </div>
     </div>
   )

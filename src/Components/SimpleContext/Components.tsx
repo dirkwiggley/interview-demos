@@ -7,7 +7,8 @@ export function Sidebar({}: SidebarProps) {
   const isSubscribed = user.isSubscribed ? "true" : "false";
   return (
     <div style={{padding: 5, border: "1px solid black"}}>
-      <div>{user.name}</div>
+      <div style={{borderBottom: "1px solid black"}}>Sidebar</div>
+      <div>User Name: {user.name}</div>
       <div>Subscription Status: {isSubscribed}</div>
     </div>
   );
@@ -18,5 +19,12 @@ interface ProfileProps {}
 export function Profile({}: ProfileProps) {
   const user = useUserContext();
 
-  return <div style={{padding: 5, border: "1px solid black"}}>{user.name}</div>;
+  return (
+    <div style={{padding: 5, border: "1px solid black", textAlign: "center"}}>
+      <div style={{borderBottom: "1px solid black"}}>
+        Profile
+      </div>
+      User Name: {user.name}
+    </div>
+  );
 }
