@@ -6,7 +6,7 @@ export function Sidebar({ }: SidebarProps) {
   const [user] = useUserContext();
 
   return (
-    <div style={{ padding: 5, border: "1px solid black" }}>
+    <div style={{ padding: 5, borderTop: "1px solid black" }}>
       <div style={{ display: "flex" }}>
         Context Data
       </div>

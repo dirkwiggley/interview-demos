@@ -29,7 +29,7 @@ const NavLinks = () => {
         <option value="redux">Redux</option>
       </select>
       <div style={{marginTop: 15, marginBottom: 15}}>
-        <button onClick={handleRunDemo}>Run Demo</button>
+        <button onClick={handleRunDemo} style={{display: "block", marginLeft: "auto", marginRight: "auto"}}>Run Demo</button>
       </div>
     </div>
   );

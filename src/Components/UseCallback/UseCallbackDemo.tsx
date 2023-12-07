@@ -39,7 +39,7 @@ export default function UseCallbackDemo({ }: DemoProps) {
   }
 
   return (
-    <div style={{ border: "1px solid black", maxWidth: "255px" }}>
+    <div style={{ borderTop: "1px solid black" }}>
       <div className='tutorial' style={{ marginLeft: 5, marginTop: 15 }}>
         <div className='align-center mb-2 flex'>
           <button onClick={() => setUsers(shuffleArray(allUsers))} style={{ marginRight: 5, minHeight: "31px" }}>

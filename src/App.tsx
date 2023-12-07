@@ -18,18 +18,20 @@ function App() {
       <Provider store={demoStore}>
         <UserProvider>
           <Router>
-            <header className="App-header">
-              Demo of various React bits
-            </header>
-            <NavLinks />
-            <Routes>
-              <Route path="/simple_context" element={<SimpleContextDemo />} />
-              <Route path="/complex_context" element={<UserStoreDemo />} />
-              <Route path="/usememo" element={<UseMemoDemo />} />
-              <Route path="/usecallback" element={<UseCallbackDemo />} />
-              <Route path="/custom_hook" element={<CustomHookDemo />} />
-              <Route path="/redux" element={<ReduxDemo />} />
-            </Routes>
+            <div style={{display: "inline-grid", border: "2px solid black"}}>
+              <header className="App-header" style={{ display: "inline-block", padding: 5 }}>
+                Demo of various React bits
+              </header>
+              <NavLinks />
+              <Routes>
+                <Route path="/simple_context" element={<SimpleContextDemo />} />
+                <Route path="/complex_context" element={<UserStoreDemo />} />
+                <Route path="/usememo" element={<UseMemoDemo />} />
+                <Route path="/usecallback" element={<UseCallbackDemo />} />
+                <Route path="/custom_hook" element={<CustomHookDemo />} />
+                <Route path="/redux" element={<ReduxDemo />} />
+              </Routes>
+            </div>
           </Router>
         </UserProvider>
       </Provider>

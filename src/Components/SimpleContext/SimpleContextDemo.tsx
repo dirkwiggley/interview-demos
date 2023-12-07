@@ -18,7 +18,9 @@ export default function SimpleContextDemo({ }: DemoProps) {
 
   return (
     <DashboardContext.Provider value={user}>
-      <Dashboard />
+      <div style={{borderTop: "2px solid black", textAlign: "center"}}>
+        <Dashboard />
+      </div>
     </DashboardContext.Provider>
   );
 }

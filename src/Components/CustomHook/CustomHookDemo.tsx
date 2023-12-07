@@ -40,13 +40,15 @@ export default function SimpleContextDemo({ }: DemoProps) {
   }, [search])
 
   return (
-    <div>
-      <SearchBar onChange={setSearch} />
-      {loading && <div>Loading...</div>}
-      {!loading &&
-        users.map((user) => {
-          return <div key={user.id}>{user.name}</div>;
-        })}
+    <div style={{borderTop: "1px solid black"}}>
+      <div style={{marginTop: 20, marginLeft: 10}}>
+        <SearchBar onChange={setSearch} />
+        {loading && <div>Loading...</div>}
+        {!loading &&
+          users.map((user) => {
+            return <div key={user.id}>{user.name}</div>;
+          })}
+      </div>
     </div>
   );
 }
