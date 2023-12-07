@@ -11,6 +11,7 @@ import UseCallbackDemo from './Components/UseCallback/UseCallbackDemo';
 import { UserProvider } from './Components/ComplexContext/UserStore';
 import CustomHookDemo from './Components/CustomHook/CustomHookDemo';
 import ReduxDemo from './Components/Redux/ReduxDemo';
+import NoDemoSelected from './Components/NoDemoSelected';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               </header>
               <NavLinks />
               <Routes>
+                <Route path="/" element={<NoDemoSelected />} />
                 <Route path="/simple_context" element={<SimpleContextDemo />} />
                 <Route path="/complex_context" element={<UserStoreDemo />} />
                 <Route path="/usememo" element={<UseMemoDemo />} />
