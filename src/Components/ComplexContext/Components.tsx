@@ -6,7 +6,7 @@ export function Sidebar({ }: SidebarProps) {
   const [user] = useUserContext();
 
   return (
-    <div style={{ padding: 5, borderTop: "1px solid black", width: "50%" }}>
+    <div style={{ padding: 5, borderTop: "1px solid black", width: "45%" }}>
       <div style={{ display: "flex" }}>
         Context Data
       </div>
@@ -65,7 +65,7 @@ export function Profile({ }: ProfileProps) {
   }
 
   return (
-    <div style={{ padding: 5, borderTop: "1px solid black", borderLeft: "1px solid black", width: "50%" }}>
+    <div style={{ padding: 5, borderTop: "1px solid black", borderLeft: "1px solid black", width: "55%" }}>
       <div style={{ display: "flex", marginBottom: 5 }}>
         Input new data here
       </div>

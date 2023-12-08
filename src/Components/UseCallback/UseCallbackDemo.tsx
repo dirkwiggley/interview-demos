@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react';
 
 import Search from './Search';
 import UseCallbackCodeOut from './UseCallbackCodeOut';
+import { useShowCodeContext } from '../NavLinks/ShowCodeContext';
 
 const allUsers = [
   'john',
@@ -14,6 +15,7 @@ const allUsers = [
 interface DemoProps { }
 
 export default function UseCallbackDemo({ }: DemoProps) {
+  const [showCode] = useShowCodeContext();
   const [users, setUsers] = useState(allUsers);
 
   const handleSearch = useCallback(
@@ -57,7 +59,7 @@ export default function UseCallbackDemo({ }: DemoProps) {
           </ul>
         </div>
       </div>
-      <UseCallbackCodeOut />
+      {showCode ? <UseCallbackCodeOut /> : null}
     </>
   );
 }

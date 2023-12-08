@@ -1,9 +1,11 @@
 import { useMemo, useState } from 'react';
 import { initialItems } from './utils';
 import UseMemoCodeOut from './UseMemoCodeOut';
+import { useShowCodeContext } from '../NavLinks/ShowCodeContext';
 interface DemoProps { }
 
 function UseMemoDemo({ }: DemoProps) {
+  const [showCode] = useShowCodeContext();
   const [count, setCount] = useState(0);
   const [items] = useState(initialItems);
 
@@ -34,7 +36,7 @@ function UseMemoDemo({ }: DemoProps) {
           </button>
         </div>
       </div>
-      <UseMemoCodeOut />
+      {showCode ? <UseMemoCodeOut /> : null}
     </>
   );
 }

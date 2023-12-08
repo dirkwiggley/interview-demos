@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { DashboardContext } from './context';
 import Dashboard from './Dashboard';
 import SimpleContextCodeOut from './SimpleContextCodeOut';
+import { useShowCodeContext } from '../NavLinks/ShowCodeContext';
 
 export interface User {
   isSubscribed: boolean;
@@ -12,6 +13,8 @@ export interface User {
 interface DemoProps { }
 
 export default function SimpleContextDemo({ }: DemoProps) {
+  const [showCode] = useShowCodeContext();
+
   const [user] = useState<User>({
     isSubscribed: true,
     name: 'You',
@@ -24,7 +27,7 @@ export default function SimpleContextDemo({ }: DemoProps) {
           <Dashboard />
         </div>
       </DashboardContext.Provider>
-      <SimpleContextCodeOut />
+      {showCode ? <SimpleContextCodeOut /> : null}
     </>
   );
 }

@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useShowCodeContext } from './ShowCodeContext';
 
 const NavLinks = () => {
-  const [demoName, setDemoName] = useState<string>('');
+  const [showCode, setShowCode] = useShowCodeContext();
   let navigate = useNavigate();
 
   const handleRunDemo = () => {
@@ -13,6 +14,10 @@ const NavLinks = () => {
       return;
     }
     navigate(`/${demoName}`);
+  }
+
+  const handleShowCodeSample = () => {
+    setShowCode(!showCode);
   }
 
   return (
@@ -28,8 +33,9 @@ const NavLinks = () => {
         <option value="custom_hook">Custom Hook</option>
         <option value="redux">Redux</option>
       </select>
-      <div style={{marginTop: 15, marginBottom: 15}}>
-        <button onClick={handleRunDemo} style={{display: "block", marginLeft: "auto", marginRight: "auto"}}>Run Demo</button>
+      <div style={{display: "flex", marginTop: 15, marginBottom: 15}}>
+        <button onClick={handleRunDemo} style={{display: "block", marginLeft: "auto", marginRight: "5"}}>Run Demo</button>
+        <button onClick={handleShowCodeSample} style={{display: "block", marginLeft: "5", marginRight: "auto"}}>{showCode ? "Hide Code Sample" : "Show Code Sample"}</button>
       </div>
     </div>
   );
