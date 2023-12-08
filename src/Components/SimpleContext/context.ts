@@ -1,5 +1,4 @@
 import { createContext, useContext } from 'react';
-
 import { User } from './SimpleContextDemo';
 
 export const DashboardContext = createContext<User | undefined>(undefined);

@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 
 import Search from './Search';
+import UseCallbackCodeOut from './UseCallbackCodeOut';
 
 const allUsers = [
   'john',
@@ -39,21 +40,24 @@ export default function UseCallbackDemo({ }: DemoProps) {
   }
 
   return (
-    <div style={{ borderTop: "1px solid black" }}>
-      <div className='tutorial' style={{ marginLeft: 5, marginTop: 15 }}>
-        <div className='align-center mb-2 flex'>
-          <button onClick={() => setUsers(shuffleArray(allUsers))} style={{ marginRight: 5, minHeight: "31px" }}>
-            Shuffle
-          </button>
+    <>
+      <div style={{ borderTop: "1px solid black" }}>
+        <div className='tutorial' style={{ marginLeft: 5, marginTop: 15 }}>
+          <div className='align-center mb-2 flex'>
+            <button onClick={() => setUsers(shuffleArray(allUsers))} style={{ marginRight: 5, minHeight: "31px" }}>
+              Shuffle
+            </button>
 
-          <Search onChange={handleSearch} />
+            <Search onChange={handleSearch} />
+          </div>
+          <ul>
+            {users.map((user) => (
+              <li key={user}>{user}</li>
+            ))}
+          </ul>
         </div>
-        <ul>
-          {users.map((user) => (
-            <li key={user}>{user}</li>
-          ))}
-        </ul>
       </div>
-    </div>
+      <UseCallbackCodeOut />
+    </>
   );
 }

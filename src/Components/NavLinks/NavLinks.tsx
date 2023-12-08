@@ -16,10 +16,10 @@ const NavLinks = () => {
   }
 
   return (
-    <div style={{marginTop: 15, marginLeft: 15}}>
+    <div style={{marginTop: 15, display: "block", marginLeft: "auto", marginRight: "auto"}}>
       <label>Choose a demo:</label>
 
-      <select name="demos" id="demos" style={{marginLeft: 5}}>
+      <select name="demos" id="demos" style={{marginLeft: 5, marginRight: 5}}>
         <option value="">Select a demo</option>
         <option value="simple_context">Simple Context</option>
         <option value="complex_context">Complex Context</option>

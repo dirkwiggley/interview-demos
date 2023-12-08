@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { DashboardContext } from './context';
 import Dashboard from './Dashboard';
+import SimpleContextCodeOut from './SimpleContextCodeOut';
 
 export interface User {
   isSubscribed: boolean;
@@ -17,10 +18,13 @@ export default function SimpleContextDemo({ }: DemoProps) {
   });
 
   return (
-    <DashboardContext.Provider value={user}>
-      <div style={{borderTop: "2px solid black", textAlign: "center"}}>
-        <Dashboard />
-      </div>
-    </DashboardContext.Provider>
+    <>
+      <DashboardContext.Provider value={user}>
+        <div style={{ borderTop: "2px solid black", textAlign: "center" }}>
+          <Dashboard />
+        </div>
+      </DashboardContext.Provider>
+      <SimpleContextCodeOut />
+    </>
   );
 }

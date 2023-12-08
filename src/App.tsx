@@ -21,7 +21,7 @@ function App() {
           <Router>
             <div style={{display: "inline-grid", border: "2px solid black"}}>
               <header className="App-header" style={{ display: "inline-block", padding: 5 }}>
-                Demo of various React bits
+                <div style={{textAlign: "center"}}>Demo of various React bits</div>
               </header>
               <NavLinks />
               <Routes>

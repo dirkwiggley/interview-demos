@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { User, fetchUsers } from './utils';
 import { useDebounce } from './CustomHook';
 import SearchBar from './SearchBar';
-import "./switch.css"
+import CustomHookCodeOut from './CustomHookCodeOut';
 
 interface DemoProps { }
 
@@ -12,34 +12,35 @@ export default function SimpleContextDemo({ }: DemoProps) {
   const [users, setUsers] = useState<User[]>([]);
   const debouncedSearch = useDebounce(search);
 
-  // Swap this for the other useEffect to show performance with
+  // Swap this in to show performance with
   // the debounce hook
-  // useEffect(() => {
-  //   const loadUsers = async () => {
-  //     setLoading(true);
-
-  //     const users = await fetchUsers(debouncedSearch);
-  //     setUsers(users);
-
-  //     setLoading(false);
-  //   };
-  //   loadUsers();
-  // }, [debouncedSearch])
-
-  // Swap this useEffect to show performance without debounce hook
   useEffect(() => {
     const loadUsers = async () => {
       setLoading(true);
 
-      const users = await fetchUsers(search);
+      const users = await fetchUsers(debouncedSearch);
       setUsers(users);
 
       setLoading(false);
     };
     loadUsers();
-  }, [search])
+  }, [debouncedSearch])
+
+  // Swap this in to show performance without debounce hook
+  // useEffect(() => {
+  //   const loadUsers = async () => {
+  //     setLoading(true);
+
+  //     const users = await fetchUsers(search);
+  //     setUsers(users);
+
+  //     setLoading(false);
+  //   };
+  //   loadUsers();
+  // }, [search])
 
   return (
+    <div style={{display: "flex"}}>
     <div style={{borderTop: "1px solid black"}}>
       <div style={{marginTop: 20, marginLeft: 10}}>
         <SearchBar onChange={setSearch} />
@@ -49,6 +50,8 @@ export default function SimpleContextDemo({ }: DemoProps) {
             return <div key={user.id}>{user.name}</div>;
           })}
       </div>
+    </div>
+    <CustomHookCodeOut />
     </div>
   );
 }
