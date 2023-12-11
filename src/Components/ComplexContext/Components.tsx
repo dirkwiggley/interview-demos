@@ -1,9 +1,8 @@
-import { useUserContext } from "./UserStore";
+import { useContext } from "react";
+import { UserContext } from "./UserStore";
 
-interface SidebarProps { }
-
-export function Sidebar({ }: SidebarProps) {
-  const [user] = useUserContext();
+export function Sidebar() {
+  const [user] = useContext(UserContext)!;
 
   return (
     <div style={{ padding: 5, borderTop: "1px solid black", width: "45%" }}>
@@ -25,10 +24,8 @@ export function Sidebar({ }: SidebarProps) {
 
 }
 
-interface ProfileProps { }
-
-export function Profile({ }: ProfileProps) {
-  const [user, setUser] = useUserContext();
+export function Profile() {
+  const [user, setUser] = useContext(UserContext)!;
 
   const handleIdChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const changeValue = Number(event.target.value);
