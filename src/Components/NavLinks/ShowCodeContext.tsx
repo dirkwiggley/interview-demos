@@ -12,7 +12,7 @@ const ShowCodeContext = React.createContext<UseShowCodeStoreType | null>(null);
 
 export const useShowCodeContext = () => React.useContext(ShowCodeContext)!;
 
-export const ShowCodeProvider = ({ children }: { children: React.ReactNode }) => (
+export const ShowCodeProvider = ({ children }: { children: React.ReactNode | null }) => (
     <ShowCodeContext.Provider value={useShowCodeStore(false)}>
         {children}
     </ShowCodeContext.Provider>
